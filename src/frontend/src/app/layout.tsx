@@ -43,11 +43,8 @@ export default function RootLayout({
                     authProvider={authProvider}
                     resources={[
                       {
-                        name: "trivias",
-                        list: "/trivias",
-                        create: "/trivias/create",
-                        edit: "/trivias/edit/:id",
-                        show: "/trivias/show/:id",
+                        name: "trivia",
+                        list: "/trivia",
                         meta: {
                           canDelete: true,
                         },

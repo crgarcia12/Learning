@@ -27,7 +27,7 @@ import Stack from '@mui/material/Stack';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import TriviaOption from "@app/trivia-option/page";
 
-export default function BlogPostList() {
+export default function Trivia() {
 
   const flippyRef = useRef(null);
 
