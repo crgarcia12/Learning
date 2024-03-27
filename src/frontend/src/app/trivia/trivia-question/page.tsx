@@ -1,6 +1,5 @@
 "use client";
 
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useMany } from "@refinedev/core";
 import {
   DateField,
@@ -26,10 +25,9 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Stack from '@mui/material/Stack';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import TriviaOption from "@app/trivia/trivia-option/page";
-import TriviaQuestion from "./trivia-question/page";
 import Question from "@app/models/question";
 
-export default function Trivia() {
+export default function TriviaQuestion(question: Question) {
 
   const flippyRef = useRef(null);
 
@@ -58,19 +56,42 @@ export default function Trivia() {
     },
   });
 
-  const _question: Question = {
-    id: 1,
-    text: "What is the capital of France?",
-    options: [
-      { id: 1, text: "Paris" },
-      { id: 2, text: "London" },
-      { id: 3, text: "Berlin" },
-      { id: 4, text: "Rome" },
-    ],
-    correctOptionId: 1,
-  };
-
   return (
-    <TriviaQuestion question={_question} />
+    <Flippy
+      flipOnHover={false} // default false
+      flipOnClick={false} // default false
+      flipDirection="horizontal" // horizontal or vertical
+      ref={flippyRef} // to use toggle method like this.flippy.toggle()
+      // if you pass isFlipped prop component will be controlled component.
+      // and other props, which will go to div 
+      //style={{ width: '200px', height: '200px' }} /// these are optional style, it is not necessary
+    >
+      <FrontSide style={{backgroundColor: 'lightgray'}}>
+        <Stack spacing={4}>
+        <Paper>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {question.question.text}
+              </Typography>
+            </CardContent>
+          </Paper>
+          <Stack spacing={4} direction={"row"}>
+            {question.question.options?.map((opt: {id: number, text: string}, index: number) => (
+              <TriviaOption
+                OptionNumber={'Option ' + (opt.id)}
+                OptionText={opt.text}
+                onClick={() => {
+                  flippyRef.current.toggle();
+                }}
+              />
+            ))}
+          </Stack>
+        </Stack>
+      </FrontSide>
+      <BackSide
+        style={{ backgroundColor: '#175852'}}>
+        ROCKS
+      </BackSide>
+    </Flippy>
   );
 }
