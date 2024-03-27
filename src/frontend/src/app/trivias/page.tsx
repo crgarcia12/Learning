@@ -25,7 +25,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import Stack from '@mui/material/Stack';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import TriviaOption from "@app/TriviaOption/page";
+import TriviaOption from "@app/trivia-option/page";
 
 export default function BlogPostList() {
 
@@ -63,7 +63,7 @@ export default function BlogPostList() {
       flipDirection="horizontal" // horizontal or vertical
       ref={flippyRef} // to use toggle method like this.flippy.toggle()
       // if you pass isFlipped prop component will be controlled component.
-      // and other props, which will go to div
+      // and other props, which will go to div 
       //style={{ width: '200px', height: '200px' }} /// these are optional style, it is not necessary
     >
       <FrontSide style={{backgroundColor: 'lightgray'}}>

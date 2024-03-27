@@ -43,6 +43,16 @@ export default function RootLayout({
                     authProvider={authProvider}
                     resources={[
                       {
+                        name: "trivias",
+                        list: "/trivias",
+                        create: "/trivias/create",
+                        edit: "/trivias/edit/:id",
+                        show: "/trivias/show/:id",
+                        meta: {
+                          canDelete: true,
+                        },
+                      },
+                      {
                         name: "blog_posts",
                         list: "/blog-posts",
                         create: "/blog-posts/create",
@@ -61,17 +71,7 @@ export default function RootLayout({
                         meta: {
                           canDelete: true,
                         },
-                      },
-                      {
-                        name: "trivias",
-                        list: "/trivias",
-                        create: "/trivias/create",
-                        edit: "/trivias/edit/:id",
-                        show: "/trivias/show/:id",
-                        meta: {
-                          canDelete: true,
-                        },
-                      },
+                      }
                     ]}
                     options={{
                       syncWithLocation: true,
