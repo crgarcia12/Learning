@@ -1,5 +1,5 @@
 import { DevtoolsProvider } from "@providers/devtools";
-import { GitHubBanner, Refine } from "@refinedev/core";
+import { Refine } from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { RefineSnackbarProvider, notificationProvider } from "@refinedev/mui";
 import routerProvider from "@refinedev/nextjs-router";
@@ -32,7 +32,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Suspense>
-          <GitHubBanner />
           <RefineKbarProvider>
             <ColorModeContextProvider defaultMode={defaultMode}>
               <RefineSnackbarProvider>
@@ -59,6 +58,16 @@ export default function RootLayout({
                         create: "/categories/create",
                         edit: "/categories/edit/:id",
                         show: "/categories/show/:id",
+                        meta: {
+                          canDelete: true,
+                        },
+                      },
+                      {
+                        name: "trivias",
+                        list: "/trivias",
+                        create: "/trivias/create",
+                        edit: "/trivias/edit/:id",
+                        show: "/trivias/show/:id",
                         meta: {
                           canDelete: true,
                         },

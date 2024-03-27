@@ -7,6 +7,18 @@
 </div>
 <br/>
 
+## How I started
+```
+npm install react-flippy
+```
+
+## How to run it
+```powershell
+    npm run dev
+```
+
+
+
 This [Refine](https://github.com/refinedev/refine) project was generated with [create refine-app](https://github.com/refinedev/refine/tree/master/packages/create-refine-app).
 
 ## Getting Started
@@ -46,3 +58,4 @@ To learn more about **Refine**, please check out the [Documentation](https://ref
 ## License
 
 MIT
+
