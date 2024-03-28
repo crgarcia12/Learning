@@ -27,7 +27,12 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import TriviaOption from "@app/trivia/trivia-option/page";
 import Question from "@app/models/question";
 
-export default function TriviaQuestion(question: Question) {
+type TriviaQuestionProps = {
+  question: Question;
+  onAnswerSelected: (option: number) => void;
+};
+
+export default function TriviaQuestion({question, onAnswerSelected}:TriviaQuestionProps) {
 
   const flippyRef = useRef(null);
 
@@ -44,6 +49,7 @@ export default function TriviaQuestion(question: Question) {
   }));
 
   const [isHovered, setIsHovered] = useState(false);
+  let selectedOption: number = 0;
 
   const { data: categoryData, isLoading: categoryIsLoading } = useMany({
     resource: "categories",
@@ -71,16 +77,19 @@ export default function TriviaQuestion(question: Question) {
         <Paper>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {question.question.text}
+                {question.text}
               </Typography>
             </CardContent>
           </Paper>
           <Stack spacing={4} direction={"row"}>
-            {question.question.options?.map((opt: {id: number, text: string}, index: number) => (
+            {question.options?.map((opt: {id: number, text: string}, index: number) => (
               <TriviaOption
+                key={index}
                 OptionNumber={'Option ' + (opt.id)}
                 OptionText={opt.text}
                 onClick={() => {
+                  console.log(`[TriviaQuestion] Option ${opt.id} was selected.`);
+                  selectedOption = opt.id;
                   flippyRef.current.toggle();
                 }}
               />
@@ -90,7 +99,20 @@ export default function TriviaQuestion(question: Question) {
       </FrontSide>
       <BackSide
         style={{ backgroundColor: '#175852'}}>
-        ROCKS
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Explanation
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+              <Typography gutterBottom variant="h6" component="div">
+                {question.explanation}
+              </Typography>
+          </Typography>
+          <Button onClick={() => {
+            console.log(`[TriviaQuestion] Calling ${selectedOption} was selected.`);
+            onAnswerSelected(selectedOption);
+          }}>Next question</Button>
+        </CardContent>
       </BackSide>
     </Flippy>
   );
