@@ -77,8 +77,6 @@ export default function StakeholderList() {
           },
         },
       }));
-    
-
 
     console.log(`[LegalAssistant] Rendering.`);
     return (
