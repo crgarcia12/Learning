@@ -13,6 +13,7 @@ import Badge, { BadgeProps } from '@mui/material/Badge';
 
 import StakeholderList from './stakeholders/page';
 import CostList from './costs/page';
+import RelevantDocumentList from './docs/page';
 // Costs
 
 
@@ -59,7 +60,7 @@ export default function LegalAssistant() {
         </Item>
         <Item>
           <Paper elevation={0}>
-            Pottential docs
+            <RelevantDocumentList />
           </Paper>
         </Item>
         <Item>

@@ -21,11 +21,12 @@ import Public from '@mui/icons-material/Public';
 import HandshakeTwoToneIcon from '@mui/icons-material/HandshakeTwoTone';
 import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwoTone';
 import { styled } from '@mui/material/styles';
+import { green, pink } from '@mui/material/colors';
 
 const data = [
   { icon: <HandshakeTwoToneIcon />, label: 'Bank vs Mrs Peters - Settled - chf 1.5M - 1 year' },
-  { icon: <WorkspacePremiumTwoToneIcon />, label: 'Bank vs Mr Pertussi - Won - chf0 - 4 years' },
-  { icon: <Public />, label: 'Bank vs Governnent - Public Case - chf 3.7M - 10 years' },
+  { icon: <WorkspacePremiumTwoToneIcon  sx={{ color: green[500] }}  />, label: 'Bank vs Mr Pertussi - Won - chf0 - 4 years' },
+  { icon: <Public sx={{ color: pink[500] }} />, label: 'Bank vs Governnent - Public Case - chf 3.7M - 10 years' },
 ];
 
 const FireNav = styled(List)<{ component?: React.ElementType }>({
@@ -66,14 +67,14 @@ export default function CostList() {
             }}
           >
             <ListItemText
-              primary="Similar cases"
+              primary="Economy of similar cases" 
               primaryTypographyProps={{
                 fontSize: 15,
                 fontWeight: 'medium',
                 lineHeight: '20px',
                 mb: '2px',
               }}
-              secondary="Authentication, Firestore Database, Realtime Database, Storage, Hosting, Functions, and Machine Learning"
+              secondary="Cost of similar cases in the past"
               secondaryTypographyProps={{
                 noWrap: true,
                 fontSize: 12,
