@@ -43,7 +43,7 @@ export default function Trivia() {
       { id: 4, text: "GASD" },
     ],
     correctOptionId: 3,
-    explanation: "It is what it is 2"
+    explanation: "It is what it is"
   }];
 
   const handleAnswerSelected = (optionId: number) => {

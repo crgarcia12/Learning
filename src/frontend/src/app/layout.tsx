@@ -43,11 +43,12 @@ export default function RootLayout({
                     authProvider={authProvider}
                     resources={[
                       {
+                        name: "legal-assistant",
+                        list: "/legal-assistant",
+                      },
+                      {
                         name: "trivia",
                         list: "/trivia",
-                        meta: {
-                          canDelete: true,
-                        },
                       },
                       {
                         name: "blog_posts",
