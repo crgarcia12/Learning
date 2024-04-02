@@ -9,13 +9,12 @@ import React, { useRef, useState } from 'react';
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import Badge, { BadgeProps } from '@mui/material/Badge';
+import Divider from '@mui/material/Divider';
 
 import StakeholderList from './stakeholders/page';
 import CostList from './costs/page';
 import RelevantDocumentList from './docs/page';
-// Costs
-
+import Chat from './chat/page';
 
 export default function LegalAssistant() {
   const Item = styled(Paper)(({ theme }) => ({
@@ -29,7 +28,7 @@ export default function LegalAssistant() {
 
   console.log(`[LegalAssistant] Rendering.`);
   return (
-    <Stack spacing={1}>
+    <Stack spacing={0}>
       <ThemeProvider
         theme={createTheme({
           components: {
@@ -52,20 +51,23 @@ export default function LegalAssistant() {
           <Paper elevation={0}>
             <StakeholderList />
           </Paper>
+          <Divider />
         </Item>
         <Item>
           <Paper elevation={0}>
             <CostList />
           </Paper>
+          <Divider />
         </Item>
         <Item>
           <Paper elevation={0}>
             <RelevantDocumentList />
           </Paper>
+          <Divider />
         </Item>
         <Item>
           <Paper elevation={0}>
-            Quick reply
+            <Chat />
           </Paper>
         </Item>
       </ThemeProvider>
