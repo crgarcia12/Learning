@@ -12,6 +12,7 @@ import HandshakeTwoToneIcon from '@mui/icons-material/HandshakeTwoTone';
 import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwoTone';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 const data = [
   { icon: <HandshakeTwoToneIcon />, label: 'Bank vs Mrs Peters - Settled - chf 1.5M - 1 year' },
@@ -52,9 +53,12 @@ export default function Chat() {
               px: 3,
               pt: 2.5,
               pb: open ? 0 : 2.5,
-              '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+              '&:hover, &:focus': { '& #arrowdownicon': { opacity: open ? 1 : 0 } },
             }}
           >
+            <ListItemIcon sx={{ my: 0, opacity: 1,  class: "menuicon"}}>
+              <LightbulbIcon/>
+            </ListItemIcon>
             <ListItemText
               primary="Tips"
               primaryTypographyProps={{
@@ -73,6 +77,7 @@ export default function Chat() {
               sx={{ my: 0 }}
             />
             <KeyboardArrowDown
+              id="arrowdownicon"
               sx={{
                 mr: -1,
                 opacity: 0,
@@ -85,7 +90,7 @@ export default function Chat() {
 
             <Paper>
               Consider sicking more information regarding the impact of a brand new law released a month ago on customer rights.
-              
+
             </Paper>
           
           

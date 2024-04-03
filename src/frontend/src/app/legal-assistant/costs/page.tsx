@@ -13,6 +13,7 @@ import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwo
 import GavelIcon from '@mui/icons-material/Gavel';
 import { styled } from '@mui/material/styles';
 import { green, pink } from '@mui/material/colors';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const data = [
   { icon: <HandshakeTwoToneIcon sx={{ color: green[500] }} />, label: 'Bank vs Mrs Peters - chf 15k - 1 year' },
@@ -57,9 +58,12 @@ export default function CostList() {
               px: 3,
               pt: 2.5,
               pb: open ? 0 : 2.5,
-              '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+              '&:hover, &:focus': { '& #arrowdownicon': { opacity: open ? 1 : 0 } },
             }}
           >
+            <ListItemIcon sx={{ my: 0, opacity: 1,  class: "menuicon"}}>
+              <AttachMoneyIcon/>
+            </ListItemIcon>
             <ListItemText
               primary="Economy of similar cases" 
               primaryTypographyProps={{
@@ -78,6 +82,7 @@ export default function CostList() {
               sx={{ my: 0 }}
             />
             <KeyboardArrowDown
+              id="arrowdownicon"
               sx={{
                 mr: -1,
                 opacity: 0,

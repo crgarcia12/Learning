@@ -16,6 +16,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import PersonIcon from '@mui/icons-material/Person';
+import ListItemIcon from '@mui/material/ListItemIcon';
 
 const GreenStyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -89,9 +91,12 @@ export default function StakeholderList() {
                         px: 3,
                         pt: 2.5,
                         pb: open ? 0 : 2.5,
-                        '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+                        '&:hover, &:focus': { '& #arrowdownicon': { opacity: open ? 1 : 0 } },
                     }}
                 >
+                    <ListItemIcon sx={{ my: 0, opacity: 1, class: "menuicon" }}>
+                        <PersonIcon />
+                    </ListItemIcon>
                     <ListItemText
                         primary="Relevant Stakeholders"
                         primaryTypographyProps={{
@@ -110,6 +115,7 @@ export default function StakeholderList() {
                         sx={{ my: 0 }}
                     />
                     <KeyboardArrowDown
+                        id="arrowdownicon"
                         sx={{
                             mr: -1,
                             opacity: 0,
@@ -147,32 +153,32 @@ export default function StakeholderList() {
                     </ListItemButton>
                 )}
                 {open && (
-                <ListItemButton alignItems="flex-start">
-                    <ListItemAvatar>
-                        <GreenStyledBadge
-                            overlap="circular"
-                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                            variant="dot"
-                        >
-                            <Avatar alt="Remy Sharp" src="/static/face.jpg" />
-                        </GreenStyledBadge>
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary="Law Lawrence"
-                        secondary={
-                            <React.Fragment>
-                                <Typography
-                                    sx={{ display: 'inline' }}
-                                    component="span"
-                                    variant="body2"
-                                    color="text.primary"
-                                >
-                                    Paralegal Officer
-                                </Typography>
-                            </React.Fragment>
-                        }
-                    />
-                </ListItemButton>
+                    <ListItemButton alignItems="flex-start">
+                        <ListItemAvatar>
+                            <GreenStyledBadge
+                                overlap="circular"
+                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                variant="dot"
+                            >
+                                <Avatar alt="Remy Sharp" src="/static/face.jpg" />
+                            </GreenStyledBadge>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary="Law Lawrence"
+                            secondary={
+                                <React.Fragment>
+                                    <Typography
+                                        sx={{ display: 'inline' }}
+                                        component="span"
+                                        variant="body2"
+                                        color="text.primary"
+                                    >
+                                        Paralegal Officer
+                                    </Typography>
+                                </React.Fragment>
+                            }
+                        />
+                    </ListItemButton>
                 )}
             </List>
         </Box>

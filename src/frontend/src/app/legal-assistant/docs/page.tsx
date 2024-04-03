@@ -15,6 +15,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import FilePresentIcon from '@mui/icons-material/FilePresent';
 
 const data = [
   { icon: <HandshakeTwoToneIcon />, label: 'Bank vs Mrs Peters - Settled - chf 1.5M - 1 year' },
@@ -67,9 +68,12 @@ export default function RelevantDocumentList() {
               px: 3,
               pt: 2.5,
               pb: open ? 0 : 2.5,
-              '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+              '&:hover, &:focus': { '& #arrowdownicon': { opacity: open ? 1 : 0 } },
             }}
           >
+            <ListItemIcon sx={{ my: 0, opacity: 1, class: "menuicon" }}>
+              <FilePresentIcon />
+            </ListItemIcon>
             <ListItemText
               primary="Relevant files"
               primaryTypographyProps={{
@@ -88,6 +92,7 @@ export default function RelevantDocumentList() {
               sx={{ my: 0 }}
             />
             <KeyboardArrowDown
+              id="arrowdownicon"
               sx={{
                 mr: -1,
                 opacity: 0,
@@ -115,13 +120,13 @@ export default function RelevantDocumentList() {
                   <Collapse in={courtCasesOpen} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <ListItemButton>
-                        <ListItemIcon>
+                        <ListItemIcon sx={{ pl: 4 }}>
                           <img src="/static/icons/docs.png" height={20} width={20} />
                         </ListItemIcon>
                         <ListItemText primary="[Ongoing] Bank vs other bank in France legal case" />
                       </ListItemButton>
                       <ListItemButton>
-                        <ListItemIcon>
+                        <ListItemIcon sx={{ pl: 4 }}>
                           <img src="/static/icons/pdf.png" height={20} width={20} />
                         </ListItemIcon>
                         <ListItemText primary="[Closed] Mr Pertussi vs Bank court decision" />
@@ -141,13 +146,13 @@ export default function RelevantDocumentList() {
                   <Collapse in={lawOpen} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <ListItemButton>
-                        <ListItemIcon>
+                        <ListItemIcon sx={{ pl: 4 }}>
                           <img src="/static/icons/edge.png" height={20} width={20} />
                         </ListItemIcon>
                         <ListItemText primary="Law on credit cards claims" />
                       </ListItemButton>
                       <ListItemButton>
-                        <ListItemIcon>
+                        <ListItemIcon sx={{ pl: 4 }}>
                           <img src="/static/icons/edge.png" height={20} width={20} />
                         </ListItemIcon>
                         <ListItemText primary="Consumer rights" />
