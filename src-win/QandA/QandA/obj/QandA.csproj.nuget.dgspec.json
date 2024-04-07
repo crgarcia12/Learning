@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carlos\\source\\repos\\QandA\\QandA\\QandA.csproj": {}
+    "C:\\gitrepos\\github\\crgarcia12\\Learning\\src-win\\QandA\\QandA\\QandA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carlos\\source\\repos\\QandA\\QandA\\QandA.csproj": {
+    "C:\\gitrepos\\github\\crgarcia12\\Learning\\src-win\\QandA\\QandA\\QandA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carlos\\source\\repos\\QandA\\QandA\\QandA.csproj",
+        "projectUniqueName": "C:\\gitrepos\\github\\crgarcia12\\Learning\\src-win\\QandA\\QandA\\QandA.csproj",
         "projectName": "QandA",
-        "projectPath": "C:\\Users\\Carlos\\source\\repos\\QandA\\QandA\\QandA.csproj",
+        "projectPath": "C:\\gitrepos\\github\\crgarcia12\\Learning\\src-win\\QandA\\QandA\\QandA.csproj",
         "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carlos\\source\\repos\\QandA\\QandA\\obj\\",
+        "outputPath": "C:\\gitrepos\\github\\crgarcia12\\Learning\\src-win\\QandA\\QandA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
