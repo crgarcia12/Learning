@@ -46,7 +46,8 @@ namespace QandA.DbServices
 
         public async Task<List<Topic>> GetAllTopicsByArea(Area area)
         {
-            ConceptDbService conceptDbService = new ConceptDbService(_databaseConnectionString);
+            var conceptDbService = new ConceptDbService(_databaseConnectionString);
+            var questionDbService = new QuestionDbService(_databaseConnectionString);
 
             // Construct the SQL query to retrieve all areas
             string query = $"SELECT id, name, area_id FROM public.topics WHERE area_id = '{area.Id}' ORDER BY name;";
@@ -71,8 +72,8 @@ namespace QandA.DbServices
                                 Area = area
                             };
 
-                            conceptDbService.GetAllConceptsByTopic(topic).Result.ForEach(concept => topic.Concepts.Add(concept));
-
+                            (await conceptDbService.GetAllConceptsByTopic(topic)).ForEach(concept => topic.Concepts.Add(concept));
+                            (await questionDbService.GetAllQuestionsByTopic(topic)).ForEach(question => topic.Questions.Add(question));
                             topics.Add(topic);
                         }
                     }

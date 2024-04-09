@@ -25,12 +25,35 @@ namespace QandA.ViewModels
             ToolStripMenuItem newQuestion = new ToolStripMenuItem();
             newQuestion.Text = "New Question";
 
-            TopicContextMenu.Items.AddRange(new ToolStripMenuItem[] { editTopic, newConcept, newQuestion });
+            ToolStripMenuItem newTrivia = new ToolStripMenuItem();
+            newTrivia.Text = "New Trivia";
+            newTrivia.Click += NewTrivia_Click;
+
+            TopicContextMenu.Items.AddRange(new ToolStripMenuItem[] { editTopic, newConcept, newQuestion, newTrivia });
+        }
+
+        private static async void NewTrivia_Click(object? sender, EventArgs e)
+        {
+            if(frmMain.MainTreeView.SelectedNode == null)
+            {
+                MessageBox.Show("Please select a topic to generate trivia for.");
+                return;
+            }
+
+            if(frmMain.MainTreeView.SelectedNode.Tag is not Topic topic)
+            {
+                MessageBox.Show("Only on trivias!");
+                return;
+            }
+
+            frmTrivia triviaForm = new frmTrivia(topic);
+            triviaForm.Show();          
+            await triviaForm.GenerateQuestions();
         }
 
         private static void NewConcept_Click(object? sender, EventArgs e)
         {
-            TreeNode selectedNode = fmrMain.MainTreeView.SelectedNode;
+            TreeNode selectedNode = frmMain.MainTreeView.SelectedNode;
             if (selectedNode != null)
             {
                 Topic topic = (Topic)selectedNode.Tag;
@@ -42,7 +65,7 @@ namespace QandA.ViewModels
                 };
                 topic.Concepts.Add(newConcept);
 
-                var conceptDbService  = new ConceptDbService(fmrMain.PostgreSqlConnectionString);
+                var conceptDbService  = new ConceptDbService(frmMain.PostgreSqlConnectionString);
                 Task.Run(() => conceptDbService.StoreNewConcept(newConcept));
                 selectedNode.Nodes.Add(ConceptViewModel.GetTreeNode(newConcept));
             }
@@ -68,10 +91,10 @@ namespace QandA.ViewModels
 
         private static void EditTopicName_Click(object? sender, EventArgs e)
         {
-            if (fmrMain.MainTreeView.SelectedNode != null)
+            if (frmMain.MainTreeView.SelectedNode != null)
             {
-                fmrMain.MainTreeView.LabelEdit = true;
-                fmrMain.MainTreeView.SelectedNode.BeginEdit();
+                frmMain.MainTreeView.LabelEdit = true;
+                frmMain.MainTreeView.SelectedNode.BeginEdit();
             }
         }
 

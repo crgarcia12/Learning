@@ -28,7 +28,7 @@ namespace QandA.ViewModels
 
         private static void NewTopic_Click(object? sender, EventArgs e)
         {
-            TreeNode selectedNode = fmrMain.MainTreeView.SelectedNode;
+            TreeNode selectedNode = frmMain.MainTreeView.SelectedNode;
             if (selectedNode != null)
             {
                 Area area = (Area)selectedNode.Tag;
@@ -40,13 +40,13 @@ namespace QandA.ViewModels
                 };
                 area.Topics.Add(newTopic);
 
-                var topicDbService = new TopicDbService(fmrMain.PostgreSqlConnectionString);
+                var topicDbService = new TopicDbService(frmMain.PostgreSqlConnectionString);
                 Task.Run(() => topicDbService.StoreNewTopic(newTopic)).Wait();
 
                 TreeNode topicTreeNode = TopicViewModel.GetTreeNode(newTopic);
                 selectedNode.Nodes.Add(topicTreeNode);
 
-                fmrMain.MainTreeView.LabelEdit = true;
+                frmMain.MainTreeView.LabelEdit = true;
                 topicTreeNode.BeginEdit();
             }
         }
@@ -81,10 +81,10 @@ namespace QandA.ViewModels
 
         private static void EditAreaName_Click(object? sender, EventArgs e)
         {
-            if (fmrMain.MainTreeView.SelectedNode != null)
+            if (frmMain.MainTreeView.SelectedNode != null)
             {
-                fmrMain.MainTreeView.LabelEdit = true;
-                fmrMain.MainTreeView.SelectedNode.BeginEdit();
+                frmMain.MainTreeView.LabelEdit = true;
+                frmMain.MainTreeView.SelectedNode.BeginEdit();
             }
         }
 

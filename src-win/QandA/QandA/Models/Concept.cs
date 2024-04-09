@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QandA.Models
 {
-    internal class Concept
+    public class Concept
     {
         public Guid Id { get; set; }
         public Topic Topic { get; set; }

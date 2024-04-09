@@ -4,7 +4,7 @@ using QandA.ViewModels;
 
 namespace QandA
 {
-    public partial class fmrMain : Form
+    public partial class frmMain : Form
     {
         public static string PostgreSqlConnectionString = "Host=localhost;Port=5432;Username=postgres;Password=P@ssword123123;Database=FlightLearning";
 
@@ -12,7 +12,7 @@ namespace QandA
         public static TreeView MainTreeView { get; set; }
 
 
-        public fmrMain()
+        public frmMain()
         {
             InitializeComponent();
             MainTreeView = this.treeViewStudy;

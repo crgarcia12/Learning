@@ -1,6 +1,6 @@
 ﻿namespace QandA
 {
-    partial class fmrMain
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.

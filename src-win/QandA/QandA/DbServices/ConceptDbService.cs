@@ -37,13 +37,16 @@ namespace QandA.DbServices
         public async Task UpdateConcept(Concept concept)
         {
             // Convert the Area object into a SQL query
-            string query = $"UPDATE concepts SET name = '{concept.Name}', concept_text = '{concept.ConceptText}' WHERE id='{concept.Id}';";
+            string query = $"UPDATE concepts SET name = @conceptName, concept_text = @conceptText WHERE id=@conceptId;";
 
             using (var dbconn = new NpgsqlConnection(_databaseConnectionString))
             {
                 await dbconn.OpenAsync();
                 using (var cmd = new NpgsqlCommand(query, dbconn))
                 {
+                    cmd.Parameters.AddWithValue("conceptName", concept.Name);
+                    cmd.Parameters.AddWithValue("conceptText", concept.ConceptText);
+                    cmd.Parameters.AddWithValue("conceptId", concept.Id);
                     await cmd.ExecuteNonQueryAsync();
                 }
 

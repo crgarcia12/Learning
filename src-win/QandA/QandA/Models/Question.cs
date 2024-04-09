@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace QandA.Models
 {
-    internal class Question
+    public class Question
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public Topic Topic { get; set; }
         public string QuestionText { get; set; }
         public string OptionCorrect { get; set; }
