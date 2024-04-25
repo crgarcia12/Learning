@@ -1,15 +1,6 @@
-ChatCompletion(id='chatcmpl-9GYruP7HYvVJ9KAFBhjmUzicIkd9K', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sorry, I dont know.', role='assistant', function_call=None, tool_calls=None), content_filter_results={'hate': {'filtered': False, 'severity': 'safe'
-        }, 'self_harm': {'filtered': False, 'severity': 'safe'
-        }, 'sexual': {'filtered': False, 'severity': 'safe'
-        }, 'violence': {'filtered': False, 'severity': 'safe'
-        }
-    })
-], created=1713734310, model='gpt-4', object='chat.completion', system_fingerprint='fp_2f57f81c11', usage=CompletionUsage(completion_tokens=6, prompt_tokens=53, total_tokens=59), prompt_filter_results=[
-    {'prompt_index': 0, 'content_filter_results': {'hate': {'filtered': False, 'severity': 'safe'
-            }, 'self_harm': {'filtered': False, 'severity': 'safe'
-            }, 'sexual': {'filtered': False, 'severity': 'safe'
-            }, 'violence': {'filtered': False, 'severity': 'safe'
-            }
-        }
-    }
-])
+[
+    {'title': 'Indian Pale Ale beer recipe', 'content': 'Ingredients:\\nTomatoes: 2kg green\\nMalted barley: 10 lbs (4.5 kg)\\nHops (like Cascade): 1.5 oz (43 g)\\nYeast: American Ale yeast\\nWater: to desired batch size\\nInstructions:\\nMash the malted barley at 152\u00c2\u00b0F (67\u00c2\u00b0C) for 60 minutes.\\nBoil for 60 minutes, adding hops at the start for bitterness and at the end for aroma.\\nFerment at 68\u00c2\u00b0F (20\u00c2\u00b0C).'
+    },
+    {'title': 'English Ale beer recipe', 'content': 'English Bitter\\nIngredients:\\nTomatoes: 1kg red\\nMalted barley: 8 lbs (3.6 kg)\\nHops (like East Kent Goldings): 1 oz (28 g)\\nYeast: English Ale yeast\\nWater: to desired batch size\\nInstructions:\\nMash malt at 154\u00c2\u00b0F (68\u00c2\u00b0C) for 60 minutes.\\nBoil for 60 minutes with hops added for both bitterness and flavor.\\nFerment at 65\u00c2\u00b0F (18\u00c2\u00b0C).'
+    },
+    {'title': 'Lionel Messi', 'content': \"Lionel Andr\u00c3\u00a9s Leo Messi is an Argentine professional footballer who plays as a forward for and captains both Major League Soccer club Inter Miami and the Argentina national team. Widely regarded as one of the greatest players of all time, Messi has won a record eight Ballon d'Or awards, a record six European Golden Shoes, and was named the world's best player for a record eight times by FIFA.[note 2] Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 34 trophies, including ten La Liga titles, seven Copa del Rey titles, and the UEFA Champions League four times.[note 3] With his country, he won the 2021 Copa Am\u00c3\u00a9rica and the 2022 FIFA World Cup. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), most hat-tricks in La Liga (36) and the UEFA Champions League (eight), and most assists in La Liga (192) and the Copa Am\u00c3\u00a9rica (17). He also has the most international goals by a South American male (106). Messi has scored over 800 senior career goals for club and country, and has the most goals by a player for a single club (672).\"}]
