@@ -1,12 +1,12 @@
 [{
     "id": "1",
     "title": "English Ale beer recipe",
-    "content": "English Bitter\nIngredients:\nMalted barley: 8 lbs (3.6 kg)\nHops (like East Kent Goldings): 1 oz (28 g)\nYeast: English Ale yeast\nWater: to desired batch size\nInstructions:\nMash malt at 154°F (68°C) for 60 minutes.\nBoil for 60 minutes with hops added for both bitterness and flavor.\nFerment at 65°F (18°C).",
+    "content": "English Bitter\nIngredients:\nTomatoes: 1kg red\nMalted barley: 8 lbs (3.6 kg)\nHops (like East Kent Goldings): 1 oz (28 g)\nYeast: English Ale yeast\nWater: to desired batch size\nInstructions:\nMash malt at 154°F (68°C) for 60 minutes.\nBoil for 60 minutes with hops added for both bitterness and flavor.\nFerment at 65°F (18°C).",
     "embedding":""
 },
 {
     "id": "2",
     "title": "Indian Pale Ale beer recipe",
-    "content": "Ingredients:\nMalted barley: 10 lbs (4.5 kg)\nHops (like Cascade): 1.5 oz (43 g)\nYeast: American Ale yeast\nWater: to desired batch size\nInstructions:\nMash the malted barley at 152°F (67°C) for 60 minutes.\nBoil for 60 minutes, adding hops at the start for bitterness and at the end for aroma.\nFerment at 68°F (20°C).",
+    "content": "Ingredients:\nTomatoes: 2kg green\nMalted barley: 10 lbs (4.5 kg)\nHops (like Cascade): 1.5 oz (43 g)\nYeast: American Ale yeast\nWater: to desired batch size\nInstructions:\nMash the malted barley at 152°F (67°C) for 60 minutes.\nBoil for 60 minutes, adding hops at the start for bitterness and at the end for aroma.\nFerment at 68°F (20°C).",
     "embedding":""
 }]
